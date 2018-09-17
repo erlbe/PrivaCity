@@ -1,0 +1,33 @@
+{
+  "name": "luisbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "azure-storage": "^2.8.1",
+    "botbuilder": "^3.14.0",
+    "botbuilder-azure": "^3.0.4",
+    "botbuilder-calling": "^3.0.1",
+    "jimp": "^0.2.28",
+    "node-emoji": "^1.8.1",
+    "restify": "^5.0.0"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
+    "request": "^2.81.0",
+    "zip-folder": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretty-quick": "pretty-quick",
+    "precommit": "pretty-quick --staged"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "arrowParens": "always"
+  },
+  "author": "",
+  "license": "ISC"
+}
