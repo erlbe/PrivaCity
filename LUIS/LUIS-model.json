@@ -1,8 +1,8 @@
 {
-  "luis_schema_version": "2.2.0",
-  "versionId": "0.1",
-  "name": "PrivaCity2",
-  "desc": "Default Intents for Azure Bot Service V2",
+  "luis_schema_version": "3.0.0",
+  "versionId": "1",
+  "name": "PrivaCity Europe",
+  "desc": "NLP for the game PrivaCity.",
   "culture": "en-us",
   "intents": [
     {
@@ -69,6 +69,9 @@
       "name": "Smalltalk.Ok"
     },
     {
+      "name": "Smalltalk.Stupid"
+    },
+    {
       "name": "Smalltalk.Thank You"
     },
     {
@@ -92,85 +95,118 @@
   ],
   "entities": [
     {
-      "name": "barista"
+      "name": "barista",
+      "roles": []
     },
     {
-      "name": "blogger"
+      "name": "bathroom",
+      "roles": []
     },
     {
-      "name": "candy"
+      "name": "blogger",
+      "roles": []
     },
     {
-      "name": "closet"
+      "name": "candy",
+      "roles": []
     },
     {
-      "name": "door"
+      "name": "closet",
+      "roles": []
     },
     {
-      "name": "drink_item"
+      "name": "door",
+      "roles": []
     },
     {
-      "name": "elevator"
+      "name": "drink_item",
+      "roles": []
     },
     {
-      "name": "equations"
+      "name": "elevator",
+      "roles": []
     },
     {
-      "name": "eraser"
+      "name": "equations",
+      "roles": []
     },
     {
-      "name": "file cabinet"
+      "name": "eraser",
+      "roles": []
     },
     {
-      "name": "flashlight"
+      "name": "file cabinet",
+      "roles": []
     },
     {
-      "name": "friend"
+      "name": "flashlight",
+      "roles": []
     },
     {
-      "name": "ice cube machine"
+      "name": "friend",
+      "roles": []
     },
     {
-      "name": "key"
+      "name": "ice cube machine",
+      "roles": []
     },
     {
-      "name": "light switch"
+      "name": "key",
+      "roles": []
     },
     {
-      "name": "men at cafe table"
+      "name": "light switch",
+      "roles": []
     },
     {
-      "name": "newspaper"
+      "name": "men at cafe table",
+      "roles": []
     },
     {
-      "name": "painting"
+      "name": "newspaper",
+      "roles": []
     },
     {
-      "name": "pencil"
+      "name": "painting",
+      "roles": []
     },
     {
-      "name": "receptionist"
+      "name": "pencil",
+      "roles": []
     },
     {
-      "name": "table"
+      "name": "receptionist",
+      "roles": []
     },
     {
-      "name": "taxi"
+      "name": "table",
+      "roles": []
     },
     {
-      "name": "whiteboard"
+      "name": "taxi",
+      "roles": []
+    },
+    {
+      "name": "whiteboard",
+      "roles": []
     },
     {
       "name": "drawer",
-      "children": ["bottom drawer", "top drawer"]
+      "children": [
+        "bottom drawer",
+        "top drawer"
+      ],
+      "roles": []
     }
   ],
   "composites": [],
   "closedLists": [],
+  "patternAnyEntities": [],
   "regex_entities": [],
-  "bing_entities": [],
+  "prebuiltEntities": [],
   "model_features": [],
   "regex_features": [],
+  "patterns": [],
   "utterances": [
     {
       "text": "abort",
@@ -208,6 +244,33 @@
           "endPos": 15
         }
       ]
+    },
+    {
+      "text": "approach ice cube",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 9,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "approach ice cube machine",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 9,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "approach machine",
+      "intent": "use ice cube machine",
+      "entities": []
     },
     {
       "text": "approach quizomat",
@@ -269,6 +332,17 @@
       ]
     },
     {
+      "text": "bathroom",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "bathroom",
+          "startPos": 0,
+          "endPos": 7
+        }
+      ]
+    },
+    {
       "text": "blogger",
       "intent": "talk to",
       "entities": [
@@ -284,9 +358,20 @@
       "intent": "open",
       "entities": [
         {
-          "entity": "drawer",
+          "entity": "file cabinet",
           "startPos": 0,
           "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "call elivator",
+      "intent": "call elevator",
+      "entities": [
+        {
+          "entity": "elevator",
+          "startPos": 5,
+          "endPos": 12
         }
       ]
     },
@@ -311,6 +396,11 @@
           "endPos": 8
         }
       ]
+    },
+    {
+      "text": "can i see them together",
+      "intent": "put down",
+      "entities": []
     },
     {
       "text": "cancel",
@@ -394,6 +484,17 @@
       ]
     },
     {
+      "text": "coffe",
+      "intent": "drink",
+      "entities": [
+        {
+          "entity": "drink_item",
+          "startPos": 0,
+          "endPos": 4
+        }
+      ]
+    },
+    {
       "text": "coffee",
       "intent": "drink",
       "entities": [
@@ -407,6 +508,33 @@
     {
       "text": "correct",
       "intent": "Smalltalk.Yes",
+      "entities": []
+    },
+    {
+      "text": "cup of cofee",
+      "intent": "drink",
+      "entities": [
+        {
+          "entity": "drink_item",
+          "startPos": 0,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "cup of coffe",
+      "intent": "drink",
+      "entities": [
+        {
+          "entity": "drink_item",
+          "startPos": 0,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "die",
+      "intent": "Smalltalk.Go fuck yourself",
       "entities": []
     },
     {
@@ -447,6 +575,17 @@
           "entity": "door",
           "startPos": 0,
           "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "doors",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "door",
+          "startPos": 0,
+          "endPos": 4
         }
       ]
     },
@@ -506,6 +645,17 @@
       ]
     },
     {
+      "text": "drink motherfucking coffee",
+      "intent": "drink",
+      "entities": [
+        {
+          "entity": "drink_item",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
       "text": "drink some water",
       "intent": "drink",
       "entities": [
@@ -539,6 +689,11 @@
       ]
     },
     {
+      "text": "eat ice",
+      "intent": "use ice cube machine",
+      "entities": []
+    },
+    {
       "text": "eat ice cube",
       "intent": "use ice cube machine",
       "entities": [
@@ -548,6 +703,11 @@
           "endPos": 11
         }
       ]
+    },
+    {
+      "text": "eat icecube",
+      "intent": "use ice cube machine",
+      "entities": []
     },
     {
       "text": "eat newspaper",
@@ -572,6 +732,39 @@
       ]
     },
     {
+      "text": "eat some ice cubes",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 9,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "elavator",
+      "intent": "call elevator",
+      "entities": [
+        {
+          "entity": "elevator",
+          "startPos": 0,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "eleivator",
+      "intent": "call elevator",
+      "entities": [
+        {
+          "entity": "elevator",
+          "startPos": 0,
+          "endPos": 8
+        }
+      ]
+    },
+    {
       "text": "enjoy some water",
       "intent": "drink",
       "entities": [
@@ -579,6 +772,17 @@
           "entity": "drink_item",
           "startPos": 11,
           "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "enter bathroom",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "bathroom",
+          "startPos": 6,
+          "endPos": 13
         }
       ]
     },
@@ -592,6 +796,11 @@
           "endPos": 9
         }
       ]
+    },
+    {
+      "text": "enter password",
+      "intent": "open",
+      "entities": []
     },
     {
       "text": "enter the door",
@@ -616,6 +825,11 @@
       ]
     },
     {
+      "text": "eras",
+      "intent": "erase",
+      "entities": []
+    },
+    {
       "text": "erase",
       "intent": "erase",
       "entities": []
@@ -623,6 +837,43 @@
     {
       "text": "erase whiteboard",
       "intent": "erase",
+      "entities": []
+    },
+    {
+      "text": "examine",
+      "intent": "look",
+      "entities": []
+    },
+    {
+      "text": "examine ice cube",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 8,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "examine ice cube machine",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 8,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "examine machine",
+      "intent": "use ice cube machine",
+      "entities": []
+    },
+    {
+      "text": "examine room",
+      "intent": "look",
       "entities": []
     },
     {
@@ -675,6 +926,21 @@
       ]
     },
     {
+      "text": "fuck",
+      "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
+      "text": "fuck off",
+      "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
+      "text": "fuck you",
+      "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
       "text": "funny",
       "intent": "Smalltalk.Haha",
       "entities": []
@@ -724,6 +990,17 @@
       ]
     },
     {
+      "text": "give mme the two other men",
+      "intent": "talk to",
+      "entities": [
+        {
+          "entity": "men at cafe table",
+          "startPos": 13,
+          "endPos": 25
+        }
+      ]
+    },
+    {
       "text": "go fuck yourself",
       "intent": "Smalltalk.Go fuck yourself",
       "entities": []
@@ -751,6 +1028,17 @@
       ]
     },
     {
+      "text": "go to barista",
+      "intent": "talk to",
+      "entities": [
+        {
+          "entity": "barista",
+          "startPos": 6,
+          "endPos": 12
+        }
+      ]
+    },
+    {
       "text": "go to elevator",
       "intent": "call elevator",
       "entities": [
@@ -762,9 +1050,107 @@
       ]
     },
     {
+      "text": "go to hell",
+      "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
+      "text": "go to ice",
+      "intent": "use ice cube machine",
+      "entities": []
+    },
+    {
+      "text": "go to ice cube",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 6,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "go to ice cube machine",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 6,
+          "endPos": 21
+        }
+      ]
+    },
+    {
       "text": "go to quiz-o-mat",
       "intent": "play quiz",
       "entities": []
+    },
+    {
+      "text": "go to the ainting",
+      "intent": "look",
+      "entities": [
+        {
+          "entity": "painting",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "go to the bathroom",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "bathroom",
+          "startPos": 10,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "go to the white board",
+      "intent": "look",
+      "entities": [
+        {
+          "entity": "whiteboard",
+          "startPos": 10,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "go to them",
+      "intent": "talk to",
+      "entities": [
+        {
+          "entity": "men at cafe table",
+          "startPos": 6,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "go to toilet",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "bathroom",
+          "startPos": 6,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "go to white board",
+      "intent": "look",
+      "entities": [
+        {
+          "entity": "whiteboard",
+          "startPos": 6,
+          "endPos": 16
+        }
+      ]
     },
     {
       "text": "good afternoon",
@@ -787,6 +1173,11 @@
       "entities": []
     },
     {
+      "text": "hæstkuk",
+      "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
       "text": "hah",
       "intent": "Smalltalk.Haha",
       "entities": []
@@ -805,6 +1196,17 @@
       "text": "hahahaha",
       "intent": "Smalltalk.Haha",
       "entities": []
+    },
+    {
+      "text": "have a cup of cofee",
+      "intent": "drink",
+      "entities": [
+        {
+          "entity": "drink_item",
+          "startPos": 7,
+          "endPos": 18
+        }
+      ]
     },
     {
       "text": "have a sip",
@@ -913,8 +1315,29 @@
       "entities": []
     },
     {
+      "text": "how can i use the key?",
+      "intent": "use",
+      "entities": [
+        {
+          "entity": "key",
+          "startPos": 18,
+          "endPos": 20
+        }
+      ]
+    },
+    {
       "text": "i am stuck",
       "intent": "Smalltalk.Help",
+      "entities": []
+    },
+    {
+      "text": "i can wtrite something",
+      "intent": "write",
+      "entities": []
+    },
+    {
+      "text": "i dont like you",
+      "intent": "Smalltalk.Stupid",
       "entities": []
     },
     {
@@ -923,8 +1346,66 @@
       "entities": []
     },
     {
+      "text": "i take on the falshlight",
+      "intent": "use",
+      "entities": [
+        {
+          "entity": "flashlight",
+          "startPos": 14,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i take on the flashlight",
+      "intent": "use",
+      "entities": [
+        {
+          "entity": "flashlight",
+          "startPos": 14,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i want to read the newspaper",
+      "intent": "read",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 19,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "i want to talk to somebody in the hotel lobby",
+      "intent": "talk to",
+      "entities": []
+    },
+    {
       "text": "i would like to cancel",
       "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "ice",
+      "intent": "use ice cube machine",
+      "entities": []
+    },
+    {
+      "text": "icecube",
+      "intent": "use ice cube machine",
+      "entities": []
+    },
+    {
+      "text": "ice-cube",
+      "intent": "use ice cube machine",
+      "entities": []
+    },
+    {
+      "text": "idiot",
+      "intent": "Smalltalk.Stupid",
       "entities": []
     },
     {
@@ -947,6 +1428,22 @@
           "endPos": 11
         }
       ]
+    },
+    {
+      "text": "inspect ice cube",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 8,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "inspect icecube",
+      "intent": "use ice cube machine",
+      "entities": []
     },
     {
       "text": "inspect newspaper",
@@ -1068,8 +1565,24 @@
       ]
     },
     {
+      "text": "lokk at the white board",
+      "intent": "look",
+      "entities": [
+        {
+          "entity": "whiteboard",
+          "startPos": 12,
+          "endPos": 22
+        }
+      ]
+    },
+    {
       "text": "lol",
       "intent": "Smalltalk.Haha",
+      "entities": []
+    },
+    {
+      "text": "look around",
+      "intent": "look",
       "entities": []
     },
     {
@@ -1128,6 +1641,17 @@
       ]
     },
     {
+      "text": "look at ice cube machine",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 8,
+          "endPos": 23
+        }
+      ]
+    },
+    {
       "text": "look at newspaper",
       "intent": "look",
       "entities": [
@@ -1168,6 +1692,17 @@
           "entity": "closet",
           "startPos": 8,
           "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "look at white board",
+      "intent": "look",
+      "entities": [
+        {
+          "entity": "whiteboard",
+          "startPos": 8,
+          "endPos": 18
         }
       ]
     },
@@ -1249,6 +1784,17 @@
       ]
     },
     {
+      "text": "look under coffe cup",
+      "intent": "look under",
+      "entities": [
+        {
+          "entity": "drink_item",
+          "startPos": 11,
+          "endPos": 19
+        }
+      ]
+    },
+    {
       "text": "look under coffee",
       "intent": "look under",
       "entities": [
@@ -1298,6 +1844,16 @@
       "entities": []
     },
     {
+      "text": "moron",
+      "intent": "Smalltalk.Stupid",
+      "entities": []
+    },
+    {
+      "text": "motherfucker",
+      "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
       "text": "nah",
       "intent": "Smalltalk.No",
       "entities": []
@@ -1311,6 +1867,17 @@
       "text": "never mind",
       "intent": "Cancel",
       "entities": []
+    },
+    {
+      "text": "news",
+      "intent": "read",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
     },
     {
       "text": "newspaper",
@@ -1374,6 +1941,17 @@
       "entities": []
     },
     {
+      "text": "open bathroom",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "bathroom",
+          "startPos": 5,
+          "endPos": 12
+        }
+      ]
+    },
+    {
       "text": "open bottom drawer",
       "intent": "open",
       "entities": [
@@ -1425,6 +2003,17 @@
           "entity": "door",
           "startPos": 5,
           "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "open doors",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "door",
+          "startPos": 5,
+          "endPos": 9
         }
       ]
     },
@@ -1583,6 +2172,17 @@
       ]
     },
     {
+      "text": "painting on the wall",
+      "intent": "look",
+      "entities": [
+        {
+          "entity": "painting",
+          "startPos": 0,
+          "endPos": 7
+        }
+      ]
+    },
+    {
       "text": "paper",
       "intent": "read",
       "entities": [
@@ -1652,6 +2252,17 @@
       "entities": []
     },
     {
+      "text": "pput the papers together",
+      "intent": "put down",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 9,
+          "endPos": 14
+        }
+      ]
+    },
+    {
       "text": "put down coffee cup",
       "intent": "put down",
       "entities": [
@@ -1704,6 +2315,11 @@
           "endPos": 14
         }
       ]
+    },
+    {
+      "text": "put on top",
+      "intent": "put down",
+      "entities": []
     },
     {
       "text": "put on top of paper",
@@ -1761,6 +2377,17 @@
           "entity": "newspaper",
           "startPos": 30,
           "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "put the papers together",
+      "intent": "put down",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 8,
+          "endPos": 13
         }
       ]
     },
@@ -1831,6 +2458,33 @@
       ]
     },
     {
+      "text": "recptionist",
+      "intent": "talk to",
+      "entities": [
+        {
+          "entity": "receptionist",
+          "startPos": 0,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "reed newspaper",
+      "intent": "read",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "retard",
+      "intent": "Smalltalk.Stupid",
+      "entities": []
+    },
+    {
       "text": "run elevator",
       "intent": "call elevator",
       "entities": [
@@ -1844,6 +2498,11 @@
     {
       "text": "screw you",
       "intent": "Smalltalk.Go fuck yourself",
+      "entities": []
+    },
+    {
+      "text": "see them together",
+      "intent": "put down",
       "entities": []
     },
     {
@@ -1950,6 +2609,11 @@
       ]
     },
     {
+      "text": "stupid bot",
+      "intent": "Smalltalk.Stupid",
+      "entities": []
+    },
+    {
       "text": "switch light",
       "intent": "use light switch",
       "entities": [
@@ -1957,6 +2621,17 @@
           "entity": "light switch",
           "startPos": 7,
           "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "take lift",
+      "intent": "call elevator",
+      "entities": [
+        {
+          "entity": "elevator",
+          "startPos": 5,
+          "endPos": 8
         }
       ]
     },
@@ -2017,6 +2692,17 @@
           "entity": "men at cafe table",
           "startPos": 8,
           "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "talk to other men",
+      "intent": "talk to",
+      "entities": [
+        {
+          "entity": "men at cafe table",
+          "startPos": 8,
+          "endPos": 16
         }
       ]
     },
@@ -2145,6 +2831,28 @@
       "entities": []
     },
     {
+      "text": "the counter",
+      "intent": "talk to",
+      "entities": [
+        {
+          "entity": "receptionist",
+          "startPos": 0,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "toilet",
+      "intent": "open",
+      "entities": [
+        {
+          "entity": "bathroom",
+          "startPos": 0,
+          "endPos": 5
+        }
+      ]
+    },
+    {
       "text": "turn light on",
       "intent": "use light switch",
       "entities": [
@@ -2180,6 +2888,11 @@
     {
       "text": "ty",
       "intent": "Smalltalk.Thank You",
+      "entities": []
+    },
+    {
+      "text": "u are stupid",
+      "intent": "Smalltalk.Stupid",
       "entities": []
     },
     {
@@ -2299,6 +3012,17 @@
           "entity": "light switch",
           "startPos": 4,
           "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "use machine",
+      "intent": "use ice cube machine",
+      "entities": [
+        {
+          "entity": "ice cube machine",
+          "startPos": 4,
+          "endPos": 10
         }
       ]
     },
@@ -2461,6 +3185,28 @@
       "entities": []
     },
     {
+      "text": "what can i use the key for?",
+      "intent": "use",
+      "entities": [
+        {
+          "entity": "key",
+          "startPos": 19,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "what can the key be used for?",
+      "intent": "use",
+      "entities": [
+        {
+          "entity": "key",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
       "text": "what can you do",
       "intent": "Smalltalk.Help",
       "entities": []
@@ -2479,6 +3225,28 @@
       "text": "what do i do?",
       "intent": "Smalltalk.Help",
       "entities": []
+    },
+    {
+      "text": "what is on the papers",
+      "intent": "read",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "what's on the papers",
+      "intent": "read",
+      "entities": [
+        {
+          "entity": "newspaper",
+          "startPos": 14,
+          "endPos": 19
+        }
+      ]
     },
     {
       "text": "whiteboard",
@@ -2573,6 +3341,21 @@
     },
     {
       "text": "yes",
+      "intent": "Smalltalk.Yes",
+      "entities": []
+    },
+    {
+      "text": "you are dumb",
+      "intent": "Smalltalk.Stupid",
+      "entities": []
+    },
+    {
+      "text": "you are stupid",
+      "intent": "Smalltalk.Stupid",
+      "entities": []
+    },
+    {
+      "text": "yupp",
       "intent": "Smalltalk.Yes",
       "entities": []
     }
